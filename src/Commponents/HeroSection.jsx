@@ -20,19 +20,19 @@ export default function HeroSection() {
   }, [slides.length]);
 
   // Fallback images if the main ones fail to load
-  // const fallbackImages = [
-  //   "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-  //   "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-  //   "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-  //   "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-  // ];
+  const fallbackImages = [
+    "/hero-1.png",
+    "/sample.jpg",
+    "/project-img1.png",
+    "/project-img2.png",
+  ];
 
   return (
     <div
       className="relative min-h-screen w-full flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden bg-white text-black dark:bg-[#0f172a] dark:text-white transition-colors duration-500 mt-25"
       id="home"
     >
-      <div className="flex flex-col lg:flex-row items-center justify-between max-w-7xl w-full gap-8 md:gap-12 z-10">
+      <div className="flex flex-col lg:flex-row items-center justify-between max-w-7xl w-full gap-8 md:gap-12 z-10">  
         {/* Left: Image Slideshow */}
         <div className="w-full lg:w-1/2 text-center lg:text-left space-y-6">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-inter leading-tight tracking-tight">

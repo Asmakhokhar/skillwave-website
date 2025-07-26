@@ -38,7 +38,7 @@ const Navbar = () => {
           <img src='/Skillwaveogo-01.png' alt="logo" className="object-cover w-[250px] h-[250px]" />
         </a>
 
-        <ul className="hidden lg:flex gap-12 text-[#000000] text-lg dark:text-white font-semibold relative font-poppins">
+        <ul className="hidden lg:flex gap-12 text-[#000000] text-lg dark:text-white font-semibold relative font-inter">
           {navLinks.map((link, i) => {
             return (
               <li key={i}>
