@@ -1,10 +1,11 @@
 import React from 'react'
+import FullCourses from '../Commponents/FullCourses'
 
 function AllCourses() {
   return (
-    <div>
-      <h1>All Courses</h1>
-    </div>
+    <>
+      <FullCourses />
+    </>
   )
 }
 

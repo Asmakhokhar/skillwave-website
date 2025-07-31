@@ -46,17 +46,41 @@ const courses = [
     icon: '/Crypto-01.png',
     desc: 'Understand blockchain, tokens, and charts. Trade crypto safely with smart risk strategies and market insights.'
   },
+  {
+    title: 'WordPress Development',
+    icon: '/wordpress icon-01.png',
+    desc: 'Build powerful, custom websites without coding. Learn themes, plugins, WooCommerce, and website optimization.'
+  },
+  {
+    title: 'Business Development',
+    icon: '/Business development-01.png',
+    desc: 'Develop the mindset and strategies to scale startups. Learn lead generation, client handling, and smart growth tactics.'
+  },
+  {
+    title: 'AI Agents (Chat Bots)',
+    icon: '/AI agent-01.png',
+    desc: 'Build smart AI chatbots for websites & social media. Learn prompt engineering, automation, and AI tools like ChatGPT.'
+  },
+  {
+    title: 'Video Editing',
+    icon: '/Video editing-01.png',
+    desc: 'Edit professional videos using tools like Premiere Pro and CapCut. Add effects, transitions, audio sync & storytelling skills.'
+  },
+  {
+    title: 'Animation 2D / 3D',
+    icon: '/Animation icon-01.png',
+    desc: 'Create stunning animations for brands, games, and content. Learn motion graphics, rigging, and animation principles.'
+  },
 ];
 
-function CoursesSection() {
+export default function FullCourses() {
   return (
     <section className='bg-white dark:bg-gray-900 py-16 px-4 sm:px-6 lg:px-8'>
       <div className='max-w-7xl mx-auto'>
         {/* Header */}
         <div className='text-center mb-12'>
-          <h2 className='text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-3'>
-            Our <span className='text-[#2ca903]'>Courses</span>
-          </h2>
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-3">Our Courses</h1>
+          <div className="w-24 h-1 bg-[#2ca903] mx-auto mb-6"></div>
           <p className='text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto'>
             Industry-relevant programs designed to launch your career in tech
           </p>
@@ -67,15 +91,14 @@ function CoursesSection() {
           {courses.map((course, idx) => (
             <div
               key={idx}
-              className='group relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700'
+              className='group bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-transform duration-300 transform hover:scale-105'
             >
               <div className='p-6'>
-                {/* Icon with background */}
-                <div className='w-16 h-16 mb-4 flex items-center justify-center'>
+                <div className='w-20 h-20 mb-4 flex items-center justify-center'>
                   <img
                     src={course.icon}
                     alt={course.title}
-                    className='w-18 h-18 object-contain'
+                    className='w-20 h-20 object-contain'
                     onError={(e) => {
                       e.target.onerror = null;
                       e.target.src = '/icons/default-course.png';
@@ -90,26 +113,14 @@ function CoursesSection() {
                   {course.desc}
                 </p>
               </div>
-
-              {/* Hover effect border */}
-              <div className='absolute inset-0 border-2 border-transparent rounded-xl pointer-events-none transition-all duration-300'></div>
             </div>
+
           ))}
         </div>
 
-        {/* Optional CTA */}
-        <div className='mt-12 text-center'>
-          <button
-            onClick={() => window.location.href = '/courses'}
-            className="px-6 py-3 bg-gradient-to-r from-[#2ca903] to-[#035470] text-white font-normal rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-[1.02] shadow-emerald-200 dark:shadow-emerald-900/50"
-          >
-            View All Courses
-            <span className="ml-2">→</span>
-          </button>
-        </div>
+
       </div>
-    </section>
+    </section>                 
+
   );
 }
-
-export default CoursesSection;

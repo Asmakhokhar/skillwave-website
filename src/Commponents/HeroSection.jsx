@@ -2,16 +2,26 @@ import React, { useState, useEffect } from 'react';
 
 export default function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
-
-  // Sample images for the slideshow
+  
   const slides = [
-    "/images/students-learning.jpg",
-    "/images/classroom.jpg",
-    "/images/online-course.jpg",
-    "/images/graduation.jpg",
+    {
+      image: "/images/students-learning.jpg",
+      fallback: "/hero-1.png",
+    },
+    {
+      image: "/images/classroom.jpg",
+      fallback: "/sample.jpg",
+    },
+    {
+      image: "/images/online-course.jpg",
+      fallback: "/project-img1.png",
+    },
+    {
+      image: "/images/graduation.jpg",
+      fallback: "/project-img2.png",
+    },
   ];
 
-  // Auto slide every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -19,98 +29,90 @@ export default function HeroSection() {
     return () => clearInterval(interval);
   }, [slides.length]);
 
-  // Fallback images if the main ones fail to load
-  const fallbackImages = [
-    "/hero-1.png",
-    "/sample.jpg",
-    "/project-img1.png",
-    "/project-img2.png",
-  ];
-
   return (
-    <div
-      className="relative min-h-screen w-full flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden bg-white text-black dark:bg-[#0f172a] dark:text-white transition-colors duration-500 mt-25"
-      id="home"
-    >
-      <div className="flex flex-col lg:flex-row items-center justify-between max-w-7xl w-full gap-8 md:gap-12 z-10">  
-        {/* Left: Image Slideshow */}
-        <div className="w-full lg:w-1/2 text-center lg:text-left space-y-6">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-inter leading-tight tracking-tight">
-            Transform Your Career with{' '}
-            <span className="text-[#2ca903]">SkillWave Institute</span>
+    <section className="relative min-h-[90vh] w-full flex items-center px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-[#0f172a] text-black dark:text-white">
+      
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-0 left-0 w-64 h-64 bg-emerald-100 dark:bg-emerald-900 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+        <div className="absolute top-0 right-0 w-64 h-64 bg-blue-100 dark:bg-blue-900 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-0 left-1/2 w-64 h-64 bg-purple-100 dark:bg-purple-900 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+      </div>
+
+      <div className="relative max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center z-10 py-16">
+        {/* Text Content */}
+        <div className="space-y-6 lg:space-y-8 order-2 lg:order-1">
+          
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight tracking-tight">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2ca903] to-[#035470]">Future-Proof</span> Your Career With Hands-On Tech Education
           </h1>
 
-          <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
-            Join our community of <strong>1000+ successful graduates</strong> who've launched careers in tech.
-            Our industry-aligned programs give you the skills employers actually want.
+          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl">
+            Join <span className="font-semibold text-[#2ca903] dark:text-emerald-400">3,500+ graduates</span> who transformed their careers with our industry-aligned programs. Get job-ready in as little as 6 months.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <div className="flex flex-col sm:flex-row gap-4 pt-2">
             <button
-              onClick={() => window.location.href = '#contact'}
-              className="px-8 py-4 bg-[#2ca903] text-white font-semibold rounded-lg hover:bg-[#248a02] transition-all duration-300 transform hover:scale-105 shadow-lg"
+              onClick={() => window.location.href = '/courses'}
+              className="px-7 py-3 bg-gradient-to-r from-[#2ca903] to-[#035470] text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-[1.02] shadow-emerald-200 dark:shadow-emerald-900/50"
             >
-              Start Your Journey Today
-            </button>
-            <button
-              onClick={() => window.location.href = '#allcourses'}
-              className="px-8 py-4 border-2 border-[#2ca903] text-[#2ca903] font-semibold rounded-lg hover:bg-[#2ca903]/10 transition-all duration-300"
-            >
-              Explore Courses
+              View Courses
+              <span className="ml-2">→</span>
             </button>
           </div>
-
-          
         </div>
 
-        {/* Right: Text Content */}
-        <div className="w-full lg:w-1/2 h-[400px] md:h-[500px] relative rounded-xl overflow-hidden shadow-xl mt-10">
-        {/* Slide indicators */}
-          <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
-            {slides.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-                className={`w-3 h-3 rounded-full ${index === currentSlide ? 'bg-[#2ca903]' : 'bg-white/50'}`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div>
+        {/* Image Slideshow */}
+        <div className="relative h-[400px] md:h-[500px] rounded-lg overflow-hidden order-1 lg:order-2">
           {slides.map((slide, index) => (
             <div
               key={index}
-              className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
             >
               <img
-                src={slide}
+                src={slide.image}
                 alt={`Slide ${index + 1}`}
                 className="w-full h-full object-cover"
                 onError={(e) => {
                   e.target.onerror = null;
-                  e.target.src = fallbackImages[index];
+                  e.target.src = slide.fallback;
                 }}
               />
+              {/* <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                <p className="text-white text-lg font-medium">{slide.overlayText}</p>
+              </div> */}
             </div>
           ))}
-        </div>
-
-
-        {/* <div className="pt-4 flex flex-wrap justify-center lg:justify-start gap-4">
-            <div className="flex items-center">
-              <svg className="w-5 h-5 text-[#2ca903]" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              <span className="ml-2">Industry Expert Instructors</span>
-            </div>
-            <div className="flex items-center">
-              <svg className="w-5 h-5 text-[#2ca903]" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              <span className="ml-2">Job Placement Support</span>
-            </div>
+          
+          {/* <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2">
+            {slides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`w-8 h-2 rounded-full transition-all duration-300 ${index === currentSlide ? 'bg-emerald-400 w-10' : 'bg-white/50 w-4'}`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
           </div> */}
+          
+          <button 
+            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 rounded-full shadow-md transition-all duration-300 transform hover:scale-110"
+            onClick={() => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
+            </svg>
+          </button>
+          
+          <button 
+            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 rounded-full shadow-md transition-all duration-300 transform hover:scale-110"
+            onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+            </svg>
+          </button>
+        </div>
       </div>
-    </div>
-
+    </section>
   );
 }

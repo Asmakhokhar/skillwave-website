@@ -1,9 +1,10 @@
 import React from 'react'
+import ContactSection from '../Commponents/ContactSection'
 
 export default function Connect() {
   return (
     <div>
-      <h1>Connect Page</h1>
+      <ContactSection />
     </div>
   )
 }
