@@ -33,9 +33,9 @@ const FeedbackSlider = () => {
       <h2 className="text-white text-3xl font-bold text-center mb-8">
         What Our Students Say
       </h2>
-      <div className="overflow-hidden w-full p-10 border border-white">
+      <div className="overflow-hidden w-full p-10">
         <div
-          className="flex gap-6 animate-feedback-scroll border px-10"
+          className="flex gap-6 animate-feedback-scroll px-10"
           style={{
             width: `${allFeedbacks.length * 320}px`,
             animation: `feedback-scroll ${duration}s linear infinite`,
