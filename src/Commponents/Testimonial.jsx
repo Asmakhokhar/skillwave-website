@@ -30,7 +30,7 @@ const FeedbackSlider = () => {
   const duration = allFeedbacks.length * 5; 
 
   return (
-    <div className="py-20 bg-gradient-to-r from-[#2ca903] via-[#2a7012] to-[#035470]">
+    <div className=" py-20 bg-gradient-to-r from-[#2ca903] via-[#2a7012] to-[#035470]">
       <h2 className="text-white text-4xl font-bold text-center mb-3">
         What Our Students Say
       </h2>

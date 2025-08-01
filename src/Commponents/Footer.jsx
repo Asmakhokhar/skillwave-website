@@ -86,7 +86,7 @@ export default function Footer() {
         </motion.button>
       )}
 
-      <footer className="will-change-transformrelative overflow-hidden bg-gradient-to-r from-[#2ca903] to-[#035470] text-white pt-20 pb-12 px-4 sm:px-6 lg:px-8">
+      <footer className="will-change-transform relative overflow-hidden bg-gradient-to-r from-[#2ca903] to-[#035470] text-white pt-20 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="absolute inset-0 overflow-hidden">
           {particles.map((particle) => (
             <div

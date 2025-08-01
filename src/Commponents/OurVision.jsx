@@ -20,7 +20,7 @@ const cards = [
 
 export default function OurVision() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-12 bg-gradient-to-br from-[#f6fff8] to-[#e6f0ff] dark:from-gray-900 dark:to-gray-800">
+    <section className="py-20 px-4 sm:px-6 lg:px-12 bg-white">
       <div className="text-center mb-16">
         <h1 className="text-4xl font-bold text-gray-800 dark:text-white">
           About Us
