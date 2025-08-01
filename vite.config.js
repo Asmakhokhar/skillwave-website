@@ -9,4 +9,15 @@ export default defineConfig({
   tailwindcss(),
 
   ],
+  extend: {
+    animation: {
+      'feedback-scroll': 'feedback-scroll linear infinite',
+    },
+    keyframes: {
+      'feedback-scroll': {
+        '0%': { transform: 'translateX(0%)' },
+        '100%': { transform: 'translateX(-50%)' },
+      },
+    },
+  },
 })
