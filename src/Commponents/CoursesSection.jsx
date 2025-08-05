@@ -67,7 +67,7 @@ function CoursesSection() {
           {courses.map((course, idx) => (
             <div
               key={idx}
-              className='group relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700'
+              className='group relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border transform hover:scale-105 border-gray-100 dark:border-gray-700'
             >
               <div className='p-6'>
                 {/* Icon with background */}

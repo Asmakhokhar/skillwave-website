@@ -118,7 +118,7 @@ export default function Footer() {
                 <img 
                   src='/logo-white-01.png'
                   alt="logo" 
-                  className="border object-contain w-42 h-42 sm:w-40 sm:h-40 md:w-48 md:h-48 p-2" 
+                  className="object-contain w-42 h-42 sm:w-40 sm:h-40 md:w-48 md:h-48 p-2" 
                 />
               </div>
               <p className="text-green-100/80 text-base md:text-lg leading-relaxed max-w-xs mx-auto">

@@ -3,25 +3,25 @@ import { Star } from "lucide-react";
 
 const feedbacks = [
   {
-    name: "Ibrahim Ansari",
-    skill: "Artificial Intelligence",
-    profile: "https://i.pravatar.cc/100?img=5",
+    name: "Malik Adnan",
+    skill: "Digital Marketing",
+    profile: "adnan.jpg",
     feedback:
-      "Studying at Skill Wave Institute has been a truly inspiring journey. The dynamic environment and dedicated faculty strengthened my foundation.",
+      "I had a great experience at skillWave Institute in the Digital Marketing course. The instructors are professional and supportive, and the course covers all the essentials like Social Media Marketing, Marketing strategy, and Google ads. The 1-month free internship helped me gain real-world experience and build my portfolio. Highly recommended for anyone looking to start a Digital Marketing Career!",
   },
   {
-    name: "Rida Fatima",
-    skill: "Graphic Designing",
-    profile: "https://i.pravatar.cc/100?img=6",
+    name: "Mustabshira raouf",
+    skill: "Business Development",
+    profile: "mustabshira.jpeg",
     feedback:
-      "In just a few months, this institute gave me real-world project exposure. The skills and mentorship made me more confident.",
+      "SkillWave is the leading IT institute in RYK, offering expert faculty and a supportive, student-friendly learning environment. I recently completed Business Development training, and my experience exceeded all expectations. Highly recommended for intermediate and university students looking to enhance their IT skills.",
   },
   {
-    name: "Muaz Ahmad",
-    skill: "Wordpress",
-    profile: "https://i.pravatar.cc/100?img=7",
+    name: "Sarim Murtaza",
+    skill: "Digital Marketing",
+    profile: "sarim.jpeg",
     feedback:
-      "Being a part of this journey accelerated my learning. With practical assignments, I’m developing the skills I need to grow.",
+      "SkillWave Institute is the best training institute in RYK. I have completed my Digital Marketing course and the environment is great. The teaching staff is highly qualified and I'm completely satisfied. Highly recommend SkillWave Institute!",
   },
 ];
 
