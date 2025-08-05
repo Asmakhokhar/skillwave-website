@@ -1,4 +1,6 @@
+
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 export default function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -40,6 +42,12 @@ export default function HeroSection() {
 
       <div className="relative max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center z-10 py-16">
         {/* Text Content */}
+        <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="flex flex-col items-start gap-2 relative"
+          >
         <div className="space-y-6 lg:space-y-8 order-2 lg:order-1">
           
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight tracking-tight">
@@ -60,9 +68,10 @@ export default function HeroSection() {
             </button>
           </div>
         </div>
+        </motion.div>
 
         {/* Image Slideshow */}
-        <div className="relative h-[400px] md:h-[500px] rounded-lg overflow-hidden order-1 lg:order-2">
+        {/* <div className="relative h-[400px] md:h-[500px] rounded-lg overflow-hidden order-1 lg:order-2">
           {slides.map((slide, index) => (
             <div
               key={index}
@@ -79,20 +88,11 @@ export default function HeroSection() {
               />
               {/* <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
                 <p className="text-white text-lg font-medium">{slide.overlayText}</p>
-              </div> */}
+              </div> 
             </div>
           ))}
           
-          {/* <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2">
-            {slides.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-                className={`w-8 h-2 rounded-full transition-all duration-300 ${index === currentSlide ? 'bg-emerald-400 w-10' : 'bg-white/50 w-4'}`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div> */}
+        
           
           <button 
             className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 rounded-full shadow-md transition-all duration-300 transform hover:scale-110"
@@ -111,7 +111,7 @@ export default function HeroSection() {
               <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
             </svg>
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );
