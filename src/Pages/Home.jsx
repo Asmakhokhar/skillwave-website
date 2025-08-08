@@ -5,6 +5,7 @@ import ContactSection from '../Commponents/ContactSection';
 import CountsSection from '../Commponents/CountsSection';
 import AboutSection from '../Commponents/AboutSection';
 import Testimonial from '../Commponents/Testimonial';
+import WhyChooseUs from '../Commponents/WhyChooseUs';
 
 import React from 'react'
 
@@ -27,6 +28,7 @@ export default function Home() {
       <About />
       <CoursesSection />
       <Testimonial />
+      <WhyChooseUs />
       <ContactSection />
     </>
   )
